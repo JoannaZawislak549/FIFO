@@ -13,11 +13,11 @@ public class App {
                 new AnnotationConfigApplicationContext(AppConfiguration.class);
         IFifo fifo = context.getBean(IFifo.class);
 
-        fifo.push("Janusz");
+        fifo.push("Janusz", 9);
         System.out.println(fifo);
         fifo.pushFew(3);
         System.out.println(fifo);
-        fifo.pop();
+        System.out.println(fifo.popHighThree());
         System.out.println(fifo);
 
     }
